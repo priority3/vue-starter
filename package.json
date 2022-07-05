@@ -1,5 +1,5 @@
 {
-  "name": "50-project-vue",
+  "name": "daily-vue-template",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "unplugin-vue-components": "^0.20.1",
     "vite": "^2.9.9",
     "vite-plugin-mock": "^2.9.6",
+    "vue-router": "^4.1.0",
     "vue-tsc": "^0.34.17"
   }
 }

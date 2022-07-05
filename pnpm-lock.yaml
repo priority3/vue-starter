@@ -15,6 +15,7 @@ specifiers:
   vite: ^2.9.9
   vite-plugin-mock: ^2.9.6
   vue: ^3.2.25
+  vue-router: ^4.1.0
   vue-tsc: ^0.34.17
 
 dependencies:
@@ -34,6 +35,7 @@ devDependencies:
   unplugin-vue-components: 0.20.1_vite@2.9.13+vue@3.2.37
   vite: 2.9.13
   vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@2.9.13
+  vue-router: 4.1.0_vue@3.2.37
   vue-tsc: 0.34.17_typescript@4.7.4
 
 packages:
@@ -703,6 +705,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.37
       '@vue/shared': 3.2.37
+
+  /@vue/devtools-api/6.2.0:
+    resolution: {integrity: sha512-pF1G4wky+hkifDiZSWn8xfuLOJI1ZXtuambpBEYaf7Xaf6zC/pM29rvAGpd3qaGXnr4BAXU1Pxz/VfvBGwexGA==}
+    dev: true
 
   /@vue/reactivity-transform/3.2.37:
     resolution: {integrity: sha512-IWopkKEb+8qpu/1eMKVeXrK0NLw9HicGviJzhJDEyfxTR9e1WtpnnbYkJWurX6WwoFP0sz10xQg8yL8lgskAZg==}
@@ -3517,6 +3523,15 @@ packages:
       semver: 7.3.7
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue-router/4.1.0_vue@3.2.37:
+    resolution: {integrity: sha512-A+dYO0ZXLJFZ40ebW3XtqehCW0Wv2xNH4lFddOByDja4NtItEdyirrShTlvD3UA4xc5a5mG2RRI30BusYpOb9g==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.2.0
+      vue: 3.2.37
     dev: true
 
   /vue-tsc/0.34.17_typescript@4.7.4:
