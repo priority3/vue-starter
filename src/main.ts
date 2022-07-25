@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import appView from './App.vue'
 
 import 'uno.css'
-
+import '@unocss/reset/tailwind.css'
 import { setupRouter } from './router'
 
 async function bootstrap(app: App): Promise<App> {

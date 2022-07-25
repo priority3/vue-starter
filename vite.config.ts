@@ -1,5 +1,5 @@
-import type { ConfigEnv, UserConfig } from 'vite'
-import configVitePlugin from './config/plugin'
+import type { UserConfig } from 'vite'
+import { configVitePlugin } from './config/plugin'
 // https://vitejs.dev/config/
 // export default defineConfig({
 //   plugins: configVitePlugin(),
@@ -9,11 +9,11 @@ import configVitePlugin from './config/plugin'
 //     },
 //   },
 // })
-export default ({ command }: ConfigEnv): UserConfig => {
+export default (): UserConfig => {
   // console.log(command, mode)
-  const isBuild = command === 'build'
+  // const isBuild = command === 'build'
   return {
-    plugins: configVitePlugin(isBuild),
+    plugins: configVitePlugin(),
     resolve: {
       alias: [
         {

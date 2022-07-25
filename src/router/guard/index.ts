@@ -1,11 +1,13 @@
 import type { NavigationGuardNext, RouteLocationNormalized, Router } from 'vue-router'
+import Nprogress from 'nprogress'
 export function setupRouterGuard(router: Router) {
   router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-    window.logger('now is ', to.path, from.path)
+    console.log('router.beforeEach', to, from)
+    Nprogress.start()
     next()
   })
   router.afterEach((to: RouteLocationNormalized, _: RouteLocationNormalized) => {
-    console.log(to)
-    document.title = (to.meta.title || 'pri template vue') as string
+    Nprogress.done()
+    document.title = (to.meta.title || 'pity starter') as string
   })
 }

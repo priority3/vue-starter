@@ -1,25 +1,19 @@
-import type { Plugin } from 'vite'
-import Vue from '@vitejs/plugin-vue'
+import type { PluginOption } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 import { configUnocss } from './unocss'
-import { configAutoimport } from './auto-imp'
 import { configVuecomponents } from './vue-auto-com'
-import { configMockplugin } from './mock'
-export function configVitePlugin(isBuild: Boolean): Plugin[] {
-  const vitePlugins: (Plugin | Plugin[]) [] = [
-    // unocss
-    configUnocss(),
-    // 自动引入
-    configAutoimport(),
-    // vue 相关组件 自动导入
-    configVuecomponents(),
-    // vue
-    Vue({
-      // $语法糖
-      reactivityTransform: true,
-    }),
+
+export function configVitePlugin() {
+  const vitePlugins: (PluginOption | PluginOption[])[] = [
+    vue(),
+    vueJsx(),
+    vueSetupExtend(),
   ]
-  vitePlugins.push(configMockplugin(isBuild))
+  // unocss
+  vitePlugins.push(configUnocss())
+  // vue auto components
+  vitePlugins.push(configVuecomponents())
   return vitePlugins
 }
-
-export default configVitePlugin
