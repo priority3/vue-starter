@@ -1,19 +1,14 @@
 import type { UserConfig } from 'vite'
+import { loadEnv } from 'vite'
 import { configVitePlugin } from './config/plugin'
-// https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: configVitePlugin(),
-//   resolve: {
-//     alias: {
-//       '@/': '/src/',
-//     },
-//   },
-// })
-export default (): UserConfig => {
+import { wrapperEnv } from './config/env'
+export default ({ mode }): UserConfig => {
   // console.log(command, mode)
   // const isBuild = command === 'build'
+  const env = loadEnv(mode, process.cwd())
+  const viteEnv = wrapperEnv(env)
   return {
-    plugins: configVitePlugin(),
+    plugins: configVitePlugin(viteEnv),
     resolve: {
       alias: [
         {
