@@ -1,8 +1,8 @@
-import type { UserConfig,ConfigEnv } from 'vite'
+import type { ConfigEnv, UserConfig } from 'vite'
 import { loadEnv } from 'vite'
 import { configVitePlugin } from './config/plugin'
 import { wrapperEnv } from './config/env'
-export default ({ mode }:ConfigEnv): UserConfig => {
+export default ({ mode }: ConfigEnv): UserConfig => {
   // console.log(command, mode)
   // const isBuild = command === 'build'
   const env = loadEnv(mode, process.cwd())
@@ -14,6 +14,10 @@ export default ({ mode }:ConfigEnv): UserConfig => {
         {
           find: '@/',
           replacement: '/src/',
+        },
+        {
+          find: '#/',
+          replacement: '/types/',
         },
       ],
     },

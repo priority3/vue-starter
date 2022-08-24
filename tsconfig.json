@@ -15,10 +15,14 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
-      "vite/client"
+      "vitest",
+      "vite/client",
+      "vue/ref-macros",
+      "vite-plugin-vue-layouts/client"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "@/*": ["src/*"],
+      "#/*": ["types/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

@@ -9,7 +9,7 @@ export function configAutoimport() {
       'vue/macros',
       '@vueuse/core',
     ],
-    dts: 'src/auto-imports.d.ts',
+    dts: 'types/auto-imports.d.ts',
     // dirs: [],
     // 直接在template当中使用变量
     vueTemplate: true,
