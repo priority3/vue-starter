@@ -1,16 +1,15 @@
 import type { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+import Layouts from 'vite-plugin-vue-layouts';
 import { configUnocss } from './unocss'
 import { configVuecomponents } from './vue-auto-com'
 import { configHtmlPLugin } from './html'
-
 export function configVitePlugin(viteEnv: ViteEnv) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     vue(),
     vueJsx(),
-    vueSetupExtend(),
+    Layouts()
   ]
   // unocss
   vitePlugins.push(configUnocss())

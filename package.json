@@ -7,16 +7,20 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test": "vitest"
   },
   "dependencies": {
     "@vueuse/core": "^8.7.5",
     "nprogress": "^0.2.0",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.4"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.6",
     "@pity/eslint-config": "^0.0.3",
+    "@types/node": "^18.7.12",
     "@unocss/reset": "^0.44.7",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
@@ -27,8 +31,8 @@
     "unplugin-vue-components": "^0.20.1",
     "vite": "^3.0.2",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vue-router": "^4.1.0",
+    "vite-plugin-vue-layouts": "^0.7.0",
+    "vitest": "^0.22.1",
     "vue-tsc": "^0.34.17"
   }
 }
