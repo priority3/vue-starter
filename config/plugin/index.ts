@@ -5,8 +5,11 @@ import Layouts from 'vite-plugin-vue-layouts'
 // import { configUnocss } from './unocss'
 import Unocss from 'unocss/vite'
 import { configVuecomponents } from './vue-auto-com'
+import { configAutoimport } from './auto-imp'
 import { configHtmlPLugin } from './html'
+import { configVuei18n } from './vuei18n'
 import type { ViteEnv } from '#/config'
+
 export function configVitePlugin(viteEnv: ViteEnv) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     vue(),
@@ -16,8 +19,12 @@ export function configVitePlugin(viteEnv: ViteEnv) {
   ]
   // unocss
   // vitePlugins.push(configUnocss())
-  // vue auto components
+  // auto import components
   vitePlugins.push(configVuecomponents())
+  // auto import
+  vitePlugins.push(configAutoimport())
+  // vue i18n
+  vitePlugins.push(configVuei18n())
   // html
   vitePlugins.push(configHtmlPLugin(viteEnv))
   return vitePlugins
