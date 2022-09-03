@@ -10,7 +10,7 @@ function toggleLocales() {
   <div
     h-screen w-screen
     flex justify-center
-    bg="dark-500"
+    bg-dark-500
   >
     <div
       w-120 h-50 bg="orange-200" rounded-xl shadow-xl
